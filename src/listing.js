@@ -32,7 +32,7 @@ class Listing {
     div.innerHTML = ''
     if (val) {
       items = val
-      console.log(val);
+      console.log("Val:", val);
     } else {
       items = this.all()
     }
@@ -127,9 +127,9 @@ class Listing {
     }
   }
 
-  static findListing(searchValue) {
+  static filterListing(searchValue) {
     let listings = Listing.all()
-    let newListings = listings.filter(obj => obj.title.toLowerCase() === searchValue.toLowerCase())
+    let newListings = listings.filter(obj => obj.title.toLowerCase().includes(searchValue.toLowerCase()))
     this.appendCards(newListings)
   }
 

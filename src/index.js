@@ -11,7 +11,7 @@ document.getElementById('search-button').addEventListener('click', getSearchValu
 function getSearchValue() {
   let searchValue = document.getElementById('search').value
   console.log('Get Search Value:', searchValue)
-  Listing.findListing(searchValue)
+  Listing.filterListing(searchValue)
 }
 
 
