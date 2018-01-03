@@ -10,6 +10,7 @@ class Listing {
     this.location = json.location
     this.rating = json.rating
     this.availability = json.availability
+    this.lister_id = json.lister_id
     allListings.push(this)
 
   }
@@ -46,88 +47,89 @@ class Listing {
 
       // console.log(newDiv)
       newDiv.innerHTML = `
-        <div class="card col-xs-3" style="margin-bottom: 20px">
-          <img class="card-img-top" src="${item.picture}" style="height:150px" alt="Card image cap">
-            <div class="card-block">
-              <h4 class="card-title">${item.title}</h4>
-              <h5 class="card-title">$${item.price}.00</h5>
+      <div class="card col-xs-3" style="margin-bottom: 20px">
+      <img class="card-img-top" src="${item.picture}" style="height:150px" alt="Card image cap">
+      <div class="card-block">
+      <h4 class="card-title">${item.title}</h4>
+      <h5 class="card-title">$${item.price}.00</h5>
 
-              <p class="card-text">Check out this cool guitar. It features a solid sitka spruce top...</p>
+      <p class="card-text">Check out this cool guitar. It features a solid sitka spruce top...</p>
 
-              <!-- Button trigger modal -->
-              <li type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal${item.id}">
-                More Info
-              </li>
+      <!-- Button trigger modal -->
+      <li type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal${item.id}">
+      More Info
+      </li>
 
-            </div>
-        </div>
+      </div>
+      </div>
 
-        <!-- Modal -->
-        <div class="modal fade" id="myModal${item.id}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">${item.title}</h4>
-              </div>
-              <div class="modal-body">
-                <div class="row">
-                  <div class="col-sm-6">
-                    <img src="${item.picture}" alt="">
-                  </div>
-                  <div class="col-sm-3">
-                    <p><b>Rate:</b></p>
-                    <p><b>Location:</b></p>
-                    <p><b>Condition:</b></p>
-                    <p><b>Rating:</b></p>
-                  </div>
-                  <div class="col-sm-3">
-                    <p>$${item.price}.00/day</p>
-                    <p>${item.location}</p>
-                    <p>${item.condition}</p>
-                    <p>${item.rating}</p>
+      <!-- Modal -->
+      <div class="modal fade" id="myModal${item.id}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+      <div class="modal-content">
+      <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h4 class="modal-title" id="myModalLabel">${item.title}</h4>
+      </div>
+      <div class="modal-body">
+      <div class="row">
+      <div class="col-sm-6">
+      <img src="${item.picture}" alt="">
+      </div>
+      <div class="col-sm-3">
+      <p><b>Rate:</b></p>
+      <p><b>Location:</b></p>
+      <p><b>Condition:</b></p>
+      <p><b>Rating:</b></p>
+      </div>
+      <div class="col-sm-3">
+      <p>$${item.price}.00/day</p>
+      <p>${item.location}</p>
+      <p>${item.condition}</p>
+      <p>${item.rating}</p>
 
-                  </div>
-                </div>
-
-
-                <form>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputFile">File input</label>
-                    <input type="file" id="exampleInputFile">
-                    <p class="help-block">Example block-level help text here.</p>
-                  </div>
-                  <div class="checkbox">
-                    <label>
-                      <input type="checkbox"> Check me out
-                    </label>
-                  </div>
-                  <button type="submit" class="btn btn-default">Submit</button>
-                </form>
+      </div>
+      </div>
 
 
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-              </div>
-            </div>
-          </div>
-        </div>
+      <form id ="form${item.id}">
+      <div class="form-group">
+      <label for="exampleInputEmail1">Username</label>
+      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="username">
+      </div>
+      <div class="form-group">
+      <label for="exampleInputPassword1">Pickup Date</label>
+      <input type="date" class="form-control" id="exampleInputPassword1" placeholder="Pickup Date">
+      </div>
+      <div class="form-group">
+      <label for="exampleInputPassword1">Return Date</label>
+      <input type="date" class="form-control" id="exampleInputPassword1" placeholder="Return Date">
+      </div>
+
+
+      <button id="reserve${item.id}" type="submit" class="btn btn-default">Reserve</button>
+
+      </form>
+
+
+      </div>
+
+      </div>
+      </div>
+      </div>
       `
       div.appendChild(newDiv)
+      let form = document.getElementById(`form${item.id}`)
+      let itemId = item.id
+      form.addEventListener("submit", () => reserveFunc(event, itemId))
     }
   }
 
+
   static filterListing(searchValue, locationValue) {
+
+
+
     let listings = Listing.all()
     // let newListings
 
@@ -166,19 +168,32 @@ class Listing {
   }
 
 
-createCard() {
-  return `
-      <div class="card col-xs-3">
-        <img class="card-img-top" src="${this.picture}" style="height:150px; margin-left:25%" alt="Card image cap">
-          <div class="card-block">
-            <h4 class="card-title">${this.title}</h4>
-            <h5 class="card-title">$${this.price}.00</h5>
+  createCard() {
+    return `
+    <div class="card col-xs-3">
+    <img class="card-img-top" src="${this.picture}" style="height:150px; margin-left:25%" alt="Card image cap">
+    <div class="card-block">
+    <h4 class="card-title">${this.title}</h4>
+    <h5 class="card-title">$${this.price}.00</h5>
 
-            <p class="card-text">Check out this cool guitar. It features a solid sitka spruce top...</p>
-            <a href="#" class="btn btn-primary">More Info</a>
-          </div>
-      </div>
-  `
+    <p class="card-text">Check out this cool guitar. It features a solid sitka spruce top...</p>
+    <a href="#" class="btn btn-primary">More Info</a>
+    </div>
+    </div>
+    `
+  }
+
 }
+function reserveFunc(event, itemId) {
+  event.preventDefault()
+  let username = event.target[0].value
+  let pickupDate = event.target[1].value
+  let returnDate = event.target[2].value
+  let item = Listing.all().find(listing => itemId === listing.id)
+  item.availability = false
+  let reserverId = User.all().find(user => user.username === username).id
 
+  console.log(reserverId)
+  let reservation = new Reservation({start_date: pickupDate, end_date: returnDate, reserver_id: reserverId})
+  console.log(reservation)
 }

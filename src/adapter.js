@@ -3,7 +3,7 @@ class Adapter {
 
     fetch('http://localhost:3000/users')
     .then(res => res.json())
-    .then(console.log)
+    .then(json => User.createUsers(json))
     // .then(data => User.createUsers(data))
   }
 
@@ -11,6 +11,14 @@ class Adapter {
     fetch('http://localhost:3000/listings')
     .then(res => res.json())
     .then(json => Listing.createListings(json))
+  }
+
+  static getReservations() {
+
+    fetch('http://localhost:3000/reservations')
+    .then(res => res.json())
+    .then(json => Reservation.createReservations(json))
+    // .then(data => User.createUsers(data))
   }
 
 }
