@@ -1,0 +1,6 @@
+.jumbotron {
+  background-image: url('../img/background.png');
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
