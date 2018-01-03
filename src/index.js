@@ -6,20 +6,34 @@ function initialFunction() {
 }
 
 
-document.getElementById('search-button').addEventListener('click', getSearchValue)
+document.getElementById('search-button').addEventListener('click', getSearchValues)
+// document.getElementById('location-search').addEventListener('input', getLocationValue)
 
-function getSearchValue() {
+function getSearchValues() {
   let searchValue = document.getElementById('search').value
-  console.log('Get Search Value:', searchValue)
-  Listing.filterListing(searchValue)
+  let locationValue = document.getElementById('location-search').value
+  Listing.filterListing(searchValue, locationValue)
 }
+
+// function getLocationValue() {
+//   let locationValue = document.getElementById('location-search').value
+//   console.log('Location Value:', locationValue)
+//
+// }
 
 
 
 // TO DO:
 
+
+  // BUGS:
+
+      //String Search breaks if you put in 'Shure 58'. Possibly split the string and check for inclusion of each
+
+  // NEW:
+
     // Search Form - DAN
-        // Search by partial match
+        // XX Search by partial match
         // Keyup
 
     // Renting Form - CORY

@@ -127,10 +127,42 @@ class Listing {
     }
   }
 
-  static filterListing(searchValue) {
+  static filterListing(searchValue, locationValue) {
     let listings = Listing.all()
-    let newListings = listings.filter(obj => obj.title.toLowerCase().includes(searchValue.toLowerCase()))
-    this.appendCards(newListings)
+    // let newListings
+
+
+    if (searchValue) {
+      listings = listings.filter(obj => obj.title.toLowerCase().includes(searchValue.toLowerCase()))
+      console.log('Location');
+    }
+    //
+    if (locationValue) {
+      listings = listings.filter(obj => obj.location.toLowerCase().includes(locationValue.toLowerCase()))
+      console.log('Search', listings);
+    }
+
+
+  //   let newListings = listings.filter(obj => {
+  //     // console.log("Object", obj);
+  //     if (true) {
+  //       console.log('Search Value:', searchValue)
+  //       obj.title.toLowerCase().includes(searchValue.toLowerCase())
+  //     }
+  //     if (true) {
+  //       console.log('Location Value:', locationValue)
+  //       obj.location.toLowerCase().includes(locationValue.toLowerCase())
+  //     }
+  //  })
+
+  //  if (!newListings.length) {
+  //    newListings = listings
+  //  }
+  //   console.log(newListings);
+
+
+
+    this.appendCards(listings)
   }
 
 
