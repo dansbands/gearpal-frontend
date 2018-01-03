@@ -160,5 +160,6 @@ function reserveFunc(event, itemId) {
   let reserverId = User.all().find(user => user.username === username).id
 
   console.log(reserverId)
-  // new Reservation(start_date: pickupDate, end_date: returnDate, reserver_id: reserverId)
+  let reservation = new Reservation({start_date: pickupDate, end_date: returnDate, reserver_id: reserverId})
+  console.log(reservation)
 }
