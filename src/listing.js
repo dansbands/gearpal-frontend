@@ -19,17 +19,31 @@ class Listing {
   }
 
   static createListings(json) {
+    let div = document.getElementById('listings')
     json.forEach(el => {
       let newListing = new Listing(el)
     })
     this.appendCards()
   }
 
-  static appendCards() {
+  static appendCards(val) {
     let div = document.getElementById('listings')
-    for (let i = 0; i < this.all().length; i++) {
+    let items
+    div.innerHTML = ''
+    if (val) {
+      items = val
+      console.log(val);
+    } else {
+      items = this.all()
+    }
+
+    for (let i = 0; i < items.length; i++) {
       let newDiv = document.createElement('div')
-      let item = this.all()[i]
+
+
+      let item = items[i]
+
+
       // console.log(newDiv)
       newDiv.innerHTML = `
         <div class="card col-xs-3" style="margin-bottom: 20px">
@@ -108,12 +122,16 @@ class Listing {
             </div>
           </div>
         </div>
-
       `
       div.appendChild(newDiv)
     }
   }
 
+  static findListing(searchValue) {
+    let listings = Listing.all()
+    let newListings = listings.filter(obj => obj.title.toLowerCase() === searchValue.toLowerCase())
+    this.appendCards(newListings)
+  }
 
 
 createCard() {

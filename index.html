@@ -62,7 +62,7 @@
 </div>
 
 <!-- navigation -->
-    <nav class="navbar navbar-inverse" style="margin-bottom: 0; background: rgb(42,31,85); position: fixed; top: 0; left: 0; right: 0; z-index: 1">
+    <nav class="navbar navbar-inverse" style="margin-bottom: 0; background: rgb(42,31,85); position: fixed; top: 0; left: 0; right: 0; z-index: 1; border-radius: 0; border-bottom: 3px solid rgb(255, 43, 68)">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -129,22 +129,15 @@
           <h1>Welcome to Gear<b>Pal</b>!</h1>
             <div class="form-group col-xs-8">
               <h3>Find the Musical Equipment you need...<b>Right Now!</b></h3><br>
-              <!-- <label for="search">Email address:</label> -->
               <input type="search" class="form-control" id="search" placeholder="Equipment Name: ex.: Shure sm57"style="width:70%; height: 38px">
             </div><br>
             <form class="form-inline col-xs-10">
-            <!-- <div class="form-group"> -->
-              <!-- <label for="location">Location:</label> -->
               <input type="location" class="form-control" id="location" placeholder="Location: ex.: New York, NY" style="width:30%; height: 38px">
-            <!-- </div> -->
-            <!-- <div class="checkbox">
-              <label><input type="checkbox"> Agree to <a href="#">Terms and Conditions</a></label>
-            </div> -->
-            <button type="button" class="btn btn-default" style="color: white; background: rgb(255, 43, 68); width: 23%; margin-left: 20px; font-size: 20px">S e a r c h</button>
+            <button id="search-button" type="button" class="btn btn-default" style="color: white; background: rgb(255, 43, 68); width: 23%; margin-left: 20px; font-size: 20px">S e a r c h</button>
           </form>
         </div>
       </div>
-    </div> 
+    </div>
 
     <div class="container">
 
@@ -155,83 +148,6 @@
         <!-- <div class="col-xs-12"> -->
           <h3 style="margin-bottom: 40px">Search Results:</h3>
           <div class ="row" id="listings"></div>
-
-          <div class="card col-xs-3">
-            <img class="card-img-top" src="img/guitar.png" style="height:150px; margin-left:25%" alt="Card image cap">
-              <div class="card-block">
-                <h4 class="card-title">Breedlove Guitar</h4>
-                <p class="card-text">Check out this cool guitar. It features a solid sitka spruce top...</p>
-                <a href="#" class="btn btn-primary">More Info</a>
-              </div>
-          </div>
-
-          <div class="card col-xs-3">
-            <img class="card-img-top" src="img/guitar.png" style="height:150px; margin-left:25%" alt="Card image cap">
-              <div class="card-block">
-                <h4 class="card-title">Breedlove Guitar</h4>
-                <p class="card-text">Check out this cool guitar. It features a solid sitka spruce top...</p>
-                <a href="#" class="btn btn-primary">More Info</a>
-              </div>
-          </div>
-
-          <div class="card col-xs-3">
-            <img class="card-img-top" src="img/guitar.png" style="height:150px; margin-left:25%" alt="Card image cap">
-              <div class="card-block">
-                <h4 class="card-title">Breedlove Guitar</h4>
-                <p class="card-text">Check out this cool guitar. It features a solid sitka spruce top...</p>
-                <a href="#" class="btn btn-primary">More Info</a>
-              </div>
-          </div>
-
-          <div class="card col-xs-3">
-            <img class="card-img-top" src="img/guitar.png" style="height:150px; margin-left:25%" alt="Card image cap">
-              <div class="card-block">
-                <h4 class="card-title">Breedlove Guitar</h4>
-                <p class="card-text">Check out this cool guitar. It features a solid sitka spruce top...</p>
-                <a href="#" class="btn btn-primary">More Info</a>
-              </div>
-          </div>
-        </div>
-
-<!-- second row -->
-          <div class="row" style="margin-bottom: 40px">
-            <div class="card col-xs-3">
-              <img class="card-img-top" src="img/guitar.png" style="height:150px; margin-left:25%" alt="Card image cap">
-              <div class="card-block">
-                <h4 class="card-title">Breedlove Guitar</h4>
-                <p class="card-text">Check out this cool guitar. It features a solid sitka spruce top...</p>
-                <a href="#" class="btn btn-primary">More Info</a>
-              </div>
-            </div>
-
-            <div class="card col-xs-3">
-              <img class="card-img-top" src="img/guitar.png" style="height:150px; margin-left:25%" alt="Card image cap">
-              <div class="card-block">
-                <h4 class="card-title">Breedlove Guitar</h4>
-                <p class="card-text">Check out this cool guitar. It features a solid sitka spruce top...</p>
-                <a href="#" class="btn btn-primary">More Info</a>
-              </div>
-            </div>
-
-            <div class="card col-xs-3">
-              <img class="card-img-top" src="img/guitar.png" style="height:150px; margin-left:25%" alt="Card image cap">
-              <div class="card-block">
-                <h4 class="card-title">Breedlove Guitar</h4>
-                <p class="card-text">Check out this cool guitar. It features a solid sitka spruce top...</p>
-                <a href="#" class="btn btn-primary">More Info</a>
-              </div>
-            </div>
-
-            <div class="card col-xs-3">
-              <img class="card-img-top" src="img/guitar.png" style="height:150px; margin-left:25%" alt="Card image cap">
-              <div class="card-block">
-                <h4 class="card-title">Breedlove Guitar</h4>
-                <p class="card-text">Check out this cool guitar. It features a solid sitka spruce top...</p>
-                <a href="#" class="btn btn-primary">More Info</a>
-              </div>
-            </div>
-          </div>
-<!-- end rows -->
       </div>
 
   </body>
