@@ -4,6 +4,7 @@ class Adapter {
     fetch('http://localhost:3000/users')
     .then(res => res.json())
     .then(console.log)
+    // .then(data => User.createUsers(data))
   }
 
   static getListings() {
