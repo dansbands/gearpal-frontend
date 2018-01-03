@@ -95,7 +95,7 @@ class Listing {
       <form id ="form${item.id}">
       <div class="form-group">
       <label for="exampleInputEmail1">Username</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="username">
+      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="username">
       </div>
       <div class="form-group">
       <label for="exampleInputPassword1">Pickup Date</label>
@@ -159,6 +159,6 @@ function reserveFunc(event, itemId) {
   item.availability = false
   let reserverId = User.all().find(user => user.username === username).id
 
-  console.log(user)
-  new Reservation(start_date: pickupDate, end_date: returnDate,  reserver_id: reserverId)
+  console.log(reserverId)
+  // new Reservation(start_date: pickupDate, end_date: returnDate, reserver_id: reserverId)
 }
