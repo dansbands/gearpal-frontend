@@ -38,10 +38,8 @@ function getSearchValues() {
   // NEW:
 
 
-    // Search Form - DAN
-        // Search by imperfect match ('Shure 58')
 
-    // Create Listing Form
+    // Create Listing Form - ERICK
       // Write JS
 
     // User Profile Page
@@ -58,7 +56,9 @@ function getSearchValues() {
         // Push reservations to a profile page (to be created)
 
 
-
+    // Search Form - DAN
+        // Search by imperfect match ('Shure 58')
+        // Remove from search results if unvailable
 
     // User Select - Erick
         // Done

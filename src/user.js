@@ -59,7 +59,7 @@ class User {
     userlink.innerText += `${this.username}`
     userlink.style = 'height: 40px'
     li.style = 'height: 40px'
-    pic.style = "height: 30px; width: 30px; border-radius: 10px; float: left"
+    pic.style = "height: 30px; width: 30px; border-radius: 30px; float: left"
     pic.src = this.picture
     li.id = this.id
     li.appendChild(userlink)
