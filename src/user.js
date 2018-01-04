@@ -22,27 +22,20 @@ class User {
   }
 
   static createUsers(json) {
-    console.log("Init All Users:", User.all());
     json.forEach(user => {
       let newUser = new User(user)
       newUser.addToDropdown()
-      console.log("Create User:", newUser)
     })
   }
 
   static currentUser(){
     currentUser = this.all()[0]
-    console.log("All Users: ", this.all());
-    console.log("Current User:", currentUser)
     let profilePic = document.getElementById('profile-pic')
     profilePic.src = currentUser.picture
   }
 
   static updateCurrentUser(){
     currentUser = allUsers.find(user => user.id === parseInt(this.id))
-    console.log("User: ", currentUser)
-    console.log(this)
-    console.log(event)
     let profilePic = document.getElementById('profile-pic')
     profilePic.src = currentUser.picture
   }
