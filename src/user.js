@@ -1,6 +1,7 @@
 //when this works, Comment in Adapter line 7, comment out line 6,
 
 let allUsers = []
+let currentUser
 
 class User {
   constructor(json) {
@@ -25,7 +26,21 @@ class User {
       newUser.addToDropdown()
     })
   }
+  static currentUser(){
+    currentUser = this.all()[0]
+    console.log(currentUser)
+    let profilePic = document.getElementById('profile-pic')
+    profilePic.src = currentUser.picture
+  }
 
+  static updateCurrentUser(){
+    currentUser = allUsers.find(user => user.id === parseInt(this.id))
+    console.log("User: ", currentUser)
+    console.log(this)
+    console.log(event)
+    let profilePic = document.getElementById('profile-pic')
+    profilePic.src = currentUser.picture
+  }
 
 
   /// Instance Methods
@@ -36,16 +51,22 @@ class User {
     let li = document.createElement('LI')
     let userlink = document.createElement('A')
     let pic = document.createElement('IMG')
-    li.style = 'width: 80%; height: 200px;background: aqua;margin: auto;padding: 10px'
-    pic.style = "height: 20px; width: 20px; border-radius: 25px"
+    userlink.href = "#"
+    userlink.innerText += `${this.username}`
+    userlink.style = 'height: 40px'
+    li.style = 'height: 40px'
+    pic.style = "height: 30px; width: 30px; border-radius: 10px; float: left"
     pic.src = this.picture
     li.id = this.id
-    userlink.innerHTML += `${this.username}`
     li.appendChild(userlink)
-    li.appendChild(pic)
+    userlink.appendChild(pic)
     userSelect.appendChild(li)
-
     //get user dropdown by id
     //dropdown.innerHTML += /Some User Info/
+    li.addEventListener('click', User.updateCurrentUser)
+
+
   }
+
+
 }
