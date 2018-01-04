@@ -121,7 +121,7 @@ class Listing {
       div.appendChild(newDiv)
       let form = document.getElementById(`form${item.id}`)
       let itemId = item.id
-      form.addEventListener("submit", () => reserveFunc(event, itemId))
+      form.addEventListener("submit", () => Reservation.reserveFunc(event, itemId))
     }
   }
 
@@ -184,16 +184,16 @@ class Listing {
   }
 
 }
-function reserveFunc(event, itemId) {
-  event.preventDefault()
-  let username = event.target[0].value
-  let pickupDate = event.target[1].value
-  let returnDate = event.target[2].value
-  let item = Listing.all().find(listing => itemId === listing.id)
-  item.availability = false
-  let reserverId = User.all().find(user => user.username === username).id
-
-  console.log(reserverId)
-  let reservation = new Reservation({start_date: pickupDate, end_date: returnDate, reserver_id: reserverId})
-  console.log(reservation)
-}
+// function reserveFunc(event, itemId) {
+//   event.preventDefault()
+//   let username = event.target[0].value
+//   let pickupDate = event.target[1].value
+//   let returnDate = event.target[2].value
+//   let item = Listing.all().find(listing => itemId === listing.id)
+//   item.availability = false
+//   let reserverId = User.all().find(user => user.username === username).id
+//
+//   console.log(reserverId)
+//   let reservation = new Reservation({start_date: pickupDate, end_date: returnDate, reserver_id: reserverId})
+//   console.log(reservation)
+// }
