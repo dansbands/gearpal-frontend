@@ -38,11 +38,14 @@ class User {
 
   static updateCurrentUser(){
     currentUser = allUsers.find(user => user.id === parseInt(this.id))
+
     let profilePic = document.getElementById('profile-pic')
     profilePic.src = currentUser.picture
-    return currentUser
-  }
 
+  }
+  static currentUsername(){
+    return currentUser.username
+  }
 
   /// Instance Methods
 
@@ -66,6 +69,11 @@ class User {
     //dropdown.innerHTML += /Some User Info/
     li.addEventListener('click', User.updateCurrentUser)
 
+
+  }
+
+  static currentUsername() {
+      return currentUser.username
 
   }
 
