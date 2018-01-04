@@ -4,7 +4,7 @@ class Adapter {
     fetch('http://localhost:3000/users')
     .then(res => res.json())
     .then(json => User.createUsers(json))
-    .then(()=> User.currentUser() )
+    .then(()=> User.currentUser())
     // .then(data => User.createUsers(data))
   }
 

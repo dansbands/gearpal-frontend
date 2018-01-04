@@ -21,11 +21,13 @@ class User {
     return [...allUsers]
   }
   static createUsers(json) {
+    console.log(json)
     json.forEach(user => {
       let newUser = new User(user)
       newUser.addToDropdown()
     })
   }
+
   static currentUser(){
     currentUser = this.all()[0]
     console.log(currentUser)
@@ -60,7 +62,7 @@ class User {
     li.id = this.id
     li.appendChild(userlink)
     userlink.appendChild(pic)
-    userSelect.appendChild(li)
+    userSelect.insertBefore(li, userSelect.childNodes[0])
     //get user dropdown by id
     //dropdown.innerHTML += /Some User Info/
     li.addEventListener('click', User.updateCurrentUser)

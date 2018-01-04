@@ -12,6 +12,8 @@ document.getElementById('search-button').addEventListener('click', getSearchValu
 // document.getElementById('location-search').addEventListener('input', getLocationValue)
 
 function getSearchValues() {
+  let search = document.getElementById('search')
+  let location = document.getElementById('location-search')
   let searchValue = document.getElementById('search').value
   let locationValue = document.getElementById('location-search').value
   Listing.filterListing(searchValue, locationValue)
