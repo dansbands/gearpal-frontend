@@ -132,7 +132,15 @@
               <input type="search" class="form-control" id="search" placeholder="Equipment Name: ex.: Shure sm57"style="width:70%; height: 38px">
             </div><br>
             <form class="form-inline col-xs-10">
-              <input type="location" class="form-control" id="location" placeholder="Location: ex.: New York, NY" style="width:30%; height: 38px">
+              <select type="location" class="form-control" id="location-search" placeholder="Location: ex.: New York, NY" style="width:30%; height: 38px">
+                <option value="" disabled selected>Select a Location</option>
+                <option value="Brooklyn">Brooklyn</option>
+                <option value="Bronx">The Bronx</option>
+                <option value="Manhattan">Manhattan</option>
+                <option value="Queens">Queens</option>
+                <option value="Staten">Staten Island</option>
+
+              </select>
             <button id="search-button" type="button" class="btn btn-default" style="color: white; background: rgb(255, 43, 68); width: 23%; margin-left: 20px; font-size: 20px">S e a r c h</button>
           </form>
         </div>
@@ -151,6 +159,7 @@
       </div>
 
   </body>
+  <script type="text/javascript" src="./src/reservation.js"></script>
   <script type="text/javascript" src="./src/user.js"></script>
   <script type="text/javascript" src="./src/listing.js"></script>
   <script type="text/javascript" src="./src/adapter.js"></script>
