@@ -42,18 +42,20 @@ function getSearchValues() {
     // Create Listing Form - ERICK
       // Write JS
 
-    // User Profile Page
-      //Build this
-      //Shows reservations
-
-    // Create New User Form
-      //Build this
-
-
+    // User Profile Page - DAN
+      // Build this
+      // Write JS
+      // Shows reservations
 
     // Reservation Form - CORY
-        // Generate user feedback - successfully created
-        // Push reservations to a profile page (to be created)
+      // Generate user feedback - successfully created
+
+    // Create New User Form
+      // XX Build this
+      // Add JS
+
+
+
 
 
     // Search Form - DAN
