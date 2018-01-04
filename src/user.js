@@ -40,9 +40,11 @@ class User {
     currentUser = allUsers.find(user => user.id === parseInt(this.id))
     let profilePic = document.getElementById('profile-pic')
     profilePic.src = currentUser.picture
-    return currentUser
-  }
 
+  }
+  static currentUsername(){
+    return currentUser.username
+  }
 
   /// Instance Methods
 
