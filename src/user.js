@@ -34,19 +34,18 @@ class User {
     currentUser = this.all()[0]
     let profilePic = document.getElementById('profile-pic')
     profilePic.src = currentUser.picture
+    currentUser.createUserProfile()
   }
 
   static updateCurrentUser(){
-    console.log(this);
     currentUser = allUsers.find(user => user.id === parseInt(this.id))
-
     let profilePic = document.getElementById('profile-pic')
     profilePic.src = currentUser.picture
+    currentUser.createUserProfile()
 
   }
-  // static currentUsername(){
-  //   return currentUser.username
-  // }
+
+  >>>>>>> 88ea8de81cfcef69f5e913d1639bd56f768a6dfe
 
   /// Instance Methods
 
@@ -58,10 +57,16 @@ class User {
     let pic = document.createElement('IMG')
     let profile = document.createElement('button')
     let select = document.createElement('button')
-    profile.className = "btn btn-default btn-xs pull-right"
-    profile.innerHTML = "View Profile"
     select.className = "btn btn-default btn-xs pull-right"
     select.innerHTML = "Select User"
+    profile.className = "btn btn-default btn-xs pull-right"
+    profile.innerHTML += `
+    <!-- Button trigger modal New Listing-->
+    <li data-toggle="modal" data-target="#userProfileModal">
+    View Profile
+    </li>
+
+    `
 
     userlink.href = "#"
     userlink.innerText += `${this.username}`
@@ -83,8 +88,80 @@ class User {
 
   }
 
+
   static currentUsername() {
-      return currentUser
+    return currentUser
+  }
+
+  
+  createUserProfile() {
+    console.log(this);
+    let modalDiv = document.getElementById('userProfileModal')
+    // modalDiv.innerHTML = ''
+    console.log(modalDiv);
+    let profilePicture = document.getElementById('profilePicture')
+    profilePicture.src = this.picture
+    let profileUsername = document.getElementById('profileUsername')
+    profileUsername.innerHTML = this.username
+    let profileLocation = document.getElementById('profileLocation')
+    profileLocation.innerHTML = this.location
+    let profileBorrowerRating = document.getElementById('profileBorrowerRating')
+    profileBorrowerRating.innerHTML = this.borrower_rating
+    let profileListerRating = document.getElementById('profileListerRating')
+    profileListerRating.innerHTML = this.lister_rating
+
+    let profileListings = document.getElementById('profileListings')
+    profileListings.innerHTML = ''
+    this.listings.forEach(listing => {
+      profileListings.innerHTML += `
+      <div class="panel panel-default">
+      <div class="panel-heading">
+      <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#profileListings" href="#collapse${this.id}">
+      ${listing.title}</a>
+      </h4>
+      </div>
+      <div id="collapse${this.id}" class="panel-collapse collapse">
+      <div class="panel-body">
+      <p>Availability: ${listing.availability}</p>
+      <p>Condition: ${listing.condition}</p>
+      <p>Price: ${listing.price}</p>
+      <p>Rating: ${listing.rating}</p>
+      </div>
+      </div>
+      </div>
+
+      `
+    })
+
+
+    let profileReservations = document.getElementById('profileReservations')
+    profileReservations.innerHTML = ''
+    this.reservations.forEach(reservation => {
+      console.log(reservation.start_date);
+      let resName
+      reservation.name ? resName = reservation.name : resName = "Reservation"
+      profileReservations.innerHTML += `
+      <div class="panel panel-default">
+      <div class="panel-heading">
+      <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#profileListings" href="#collapse${this.id}">
+      ${resName}</a>
+      </h4>
+      </div>
+      <div id="collapse${this.id}" class="panel-collapse collapse">
+      <div class="panel-body">
+      <h5>Start Date:</h5>
+      <p>${reservation.start_date}</p>
+      <h5>End Date:</h5>
+      <p>${reservation.end_date}</p>
+      </div>
+      </div>
+      </div>
+
+      `
+    })
+
 
   }
 
