@@ -95,7 +95,10 @@ class Listing {
       <form id ="form${item.id}">
       <div class="form-group">
       <label for="exampleInputEmail1">Username</label>
+
       <input type="text" class="form-control" id="exampleInputEmail${item.id}">
+
+
       </div>
       <div class="form-group">
       <label for="exampleInputPassword1">Pickup Date</label>
