@@ -15,101 +15,6 @@
     <!-- Latest compiled and minified JavaScript -->
   </head>
   <body>
-    <!-- modal -->
-
-
-
-<!-- Modal For Listing-->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">List Your Gear</h4>
-      </div>
-      <div class="modal-body">
-        <img src="img/img-placeholder.png" alt="">
-        <form>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputFile">File input</label>
-            <input type="file" id="exampleInputFile">
-            <p class="help-block">Example block-level help text here.</p>
-          </div>
-          <div class="checkbox">
-            <label>
-              <input type="checkbox"> Check me out
-            </label>
-          </div>
-          <button type="submit" class="btn btn-default">Submit</button>
-        </form>
-
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal For New User-->
-<div class="modal fade" id="newUserModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Create New User</h4>
-      </div>
-      <div class="modal-body">
-        <img src="img/profile/placeholder.png" alt="" style="width: 200px; height: 200px">
-        <form>
-          <div class="form-group">
-            <label for="exampleInputEmail2">Enter Email Address</label>
-            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword2">Enter Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
-          </div>
-          <div class="form-group">
-            <label for="exampleConfirmPassword2">Confirm Password</label>
-            <input type="password" class="form-control" id="exampleConfirmPassword2" placeholder="Password">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputFile">Upload a Profile Picture</label>
-            <input type="file" id="exampleInputFile">
-            <p class="help-block">Example block-level help text here.</p>
-          </div>
-          <div class="checkbox">
-            <label>
-              <input type="checkbox"> Check me out
-            </label>
-          </div>
-          <button type="submit" class="btn btn-default">Submit</button>
-        </form>
-
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-
 
 <!-- navigation -->
     <nav class="navbar navbar-inverse" style="margin-bottom: 0; background: rgb(42,31,85); position: fixed; top: 0; left: 0; right: 0; z-index: 1; border-radius: 0; border-bottom: 3px solid rgb(255, 43, 68)">
@@ -158,7 +63,7 @@
 
                   <li id="separator" role="separator" class="divider"></li>
                   <!-- Button trigger modal New User -->
-                  <li style="margin-top: 10px; background-color: rgb(255, 43, 68); color: white; border-color: white" type="button" class="btn btn-inverse" data-toggle="modal" data-target="#newUserModal">
+                  <li style="margin-right: 10px; background-color: rgb(255, 43, 68); color: white; border-color: white" type="button" class="btn pull-right" data-toggle="modal" data-target="#newUserModal">
                     Create New User
                   </li>
                   <!-- <li style="background-color: rgb(255, 43, 68)"><a href="#">Create New User</a></li> -->
@@ -208,6 +113,152 @@
         </div>
           <div class ="row" id="listings"></div>
       </div>
+
+<!-- modals -->
+    <!-- Modal For Listing-->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">List Your Gear</h4>
+          </div>
+          <div class="modal-body">
+            <img src="img/img-placeholder.png" alt="">
+            <form>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputFile">File input</label>
+                <input type="file" id="exampleInputFile">
+                <p class="help-block">Example block-level help text here.</p>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> Check me out
+                </label>
+              </div>
+              <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal For New User-->
+    <div class="modal fade" id="newUserModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Create New User</h4>
+          </div>
+          <div class="modal-body">
+            <img src="img/profile/placeholder.png" alt="" style="width: 200px; height: 200px">
+            <form>
+              <div class="form-group">
+                <label for="exampleInputEmail2">Enter Email Address</label>
+                <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword2">Enter Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
+              </div>
+              <div class="form-group">
+                <label for="exampleConfirmPassword2">Confirm Password</label>
+                <input type="password" class="form-control" id="exampleConfirmPassword2" placeholder="Password">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputFile">Upload a Profile Picture</label>
+                <input type="file" id="exampleInputFile">
+                <p class="help-block">Example block-level help text here.</p>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> Check me out
+                </label>
+              </div>
+              <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal For User Profile-->
+    <!-- <div class="modal fade" id="userProfileModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"> -->
+    <div>
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">User Profile</h4>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="container">
+                <div class="col-sm-3">
+                  <img id="profilePicture" src="img/profile/placeholder.png" alt="" style="width: 200px; height: 200px">
+                </div>
+                <div class="col-sm-3">
+                  <h5>Username: <span id="profileUsername"></span></h5>
+                  <h5>Location: <span id="profileLocation"></span></h5>
+                </div>
+
+
+              </div>
+            </div>
+            <div class="row" style="min-height: 150px; margin-top: 20px">
+              <div class="container">
+                <div class="col-sm-3">
+                  <h5>Borrower Rating: <span id="profileBorrowerRating"></span></h5>
+                  <h5>Reservations:</h5>
+                  <!-- <div id="profileReservations"></div> -->
+                  <div class="panel-group" id="profileReservations"></div>
+
+                </div>
+                <div class="col-sm-3">
+                  <h5>Lister Rating: <span id="profileListerRating"></span></h5>
+                  <h5>Listings:</h5>
+                  <!-- <div id="profileListings"></div> -->
+
+                  <div class="panel-group" id="profileListings"></div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    <!-- </div> -->
+
+    <div id="modal-div"></div>
+
+
+
+
 
   </body>
   <script type="text/javascript" src="./src/reservation.js"></script>

@@ -64,7 +64,7 @@ function getSearchValues() {
 
     // User Select - Erick
         // Done
-
+        // Add view profile
 
 
 
