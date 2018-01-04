@@ -31,13 +31,14 @@ class Reservation {
     let username = event.target[0].value
     let pickupDate = event.target[1].value
     let returnDate = event.target[2].value
+    let titleDiv = document.getElementById(`itemTitle${itemId}`).innerText
     let item = Listing.all().find(listing => itemId === listing.id)
     item.availability = false
     let reserverId = User.all().find(user => user.username === username).id
 
-    let reservation = new Reservation({start_date: pickupDate, end_date: returnDate, reserver_id: reserverId})
+    let reservation = new Reservation({start_date: pickupDate, name: titleDiv, end_date: returnDate, reserver_id: reserverId})
     let borrowerId = User.all().find(user => user.username === username).id
-    let titleDiv = document.getElementById(`itemTitle${itemId}`).innerText
+
     console.log(titleDiv);
     let reserveData = {
       start_date: pickupDate,
@@ -62,7 +63,7 @@ class Reservation {
         if ((reservation.listing_id === itemId)) {
           let reserveDiv = document.getElementById(`form${itemId}`)
           reserveDiv.innerHTML = ""
-          
+
           reserveDiv.innerHTML += "<br><p id='userFeed'>You have reserved this item</p>"
           break
         }
