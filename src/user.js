@@ -22,18 +22,20 @@ class User {
   static all(){
     return [...allUsers]
   }
+
   static createUsers(json) {
-    console.log(json)
+    console.log("Init All Users:", User.all());
     json.forEach(user => {
       let newUser = new User(user)
       newUser.addToDropdown()
+      console.log("Create User:", newUser)
     })
   }
 
   static currentUser(){
     currentUser = this.all()[0]
 
-    console.log(currentUser)
+
     let profilePic = document.getElementById('profile-pic')
     profilePic.src = currentUser.picture
   }
