@@ -50,13 +50,13 @@ class Listing {
       <div class="card col-xs-3" style="margin-bottom: 20px">
       <img class="card-img-top" src="${item.picture}" style="height:150px" alt="Card image cap">
       <div class="card-block">
-      <h4 class="card-title">${item.title}</h4>
+      <h4 id="itemTitle${item.id}" class="card-title">${item.title}</h4>
       <h5 class="card-title">$${item.price}.00</h5>
 
       <p class="card-text">Check out this cool guitar. It features a solid sitka spruce top...</p>
 
       <!-- Button trigger modal -->
-      <li type="button" onclick="changeValue(${item.id})" class="btn btn-primary" data-toggle="modal" data-target="#myModal${item.id}" onclick="changeValue(${item.id})">
+      <li type="button" onclick="Listing.changeValue(${item.id})" class="btn btn-primary" data-toggle="modal" data-target="#myModal${item.id}" onclick="changeValue(${item.id})">
       More Info
       </li>
 
@@ -183,11 +183,10 @@ class Listing {
     `
   }
 
+  static changeValue(id) {
+    let input = document.getElementById(`exampleInputEmail-${id}`)
+    console.log(input);
+    input.value = User.currentUsername().username
+  }
 
-
-}
-function changeValue(id) {
-  let input = document.getElementById(`exampleInputEmail-${id}`)
-  console.log(input);
-  input.value = User.currentUsername()
 }

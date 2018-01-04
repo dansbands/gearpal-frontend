@@ -44,9 +44,9 @@ class User {
     profilePic.src = currentUser.picture
 
   }
-  static currentUsername(){
-    return currentUser.username
-  }
+  // static currentUsername(){
+  //   return currentUser.username
+  // }
 
   /// Instance Methods
 
@@ -84,7 +84,7 @@ class User {
   }
 
   static currentUsername() {
-      return currentUser.username
+      return currentUser
 
   }
 

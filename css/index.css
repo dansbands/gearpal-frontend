@@ -13,3 +13,13 @@
   background-color: rgba(42,31,85, 0.8);
   border-color: rgb(255, 43, 68);
 }
+
+@keyframes flashMessage {
+  from{color: rgba(0, 153, 51, 1)}
+  to{color: rgba(0, 0, 0, 0)}
+
+}
+
+#userFeed {
+  color: green
+}
