@@ -47,9 +47,7 @@ function getSearchValues() {
       // Write JS
       // Shows reservations
 
-    // Reservation Form - CORY
-      // Generate user feedback - successfully created
-
+      //CORY
     // Create New User Form
       // XX Build this
       // Add JS
@@ -70,6 +68,8 @@ function getSearchValues() {
 
 
 // DONE:
+// Reservation Form - CORY
+  // XXGenerate user feedback - successfully created
 
     // User Select
         // XX Populate User Select Dropdown with user info

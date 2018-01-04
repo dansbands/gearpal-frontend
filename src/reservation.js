@@ -60,13 +60,13 @@ class Reservation {
       let reserveDiv = undefined
       for (let i = 0; i< currentUser.reservations.length; i++) {
         let reservation = currentUser.reservations[i]
-        if ((reservation.listing_id === itemId)) {
+
           let reserveDiv = document.getElementById(`form${itemId}`)
           reserveDiv.innerHTML = ""
 
           reserveDiv.innerHTML += "<br><p id='userFeed'>You have reserved this item</p>"
           break
-        }
+
       }
 
 
