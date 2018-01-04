@@ -34,26 +34,33 @@ function getSearchValues() {
 
       //String Search breaks if you put in 'Shure 58'. Possibly split the string and check for inclusion of each
 
-      //ProfilePic doesn't load properly
 
   // NEW:
 
     // Search Form - DAN
         // Search by imperfect match ('Shure 58')
 
-    // Create New User Form
+    // Create Listing Form
+      // Write JS
 
     // User Profile Page
-        //Shows reservations
+      //Build this
+      //Shows reservations
+
+    // Create New User Form
+      //Build this
+
 
 
     // Reservation Form - CORY
+        // Generate user feedback - successfully created
+        // Push reservations to a profile page (to be created)
 
 
-    // Create Listing Form
 
 
-    // User Select
+    // User Select - Erick
+        // Done
 
 
 
@@ -68,3 +75,5 @@ function getSearchValues() {
 
     // Search Form - DAN
         // XX Search by partial match
+
+    // XX ProfilePic doesn't load properly
