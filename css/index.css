@@ -4,3 +4,12 @@
   -o-background-size: cover;
   background-size: cover;
 }
+
+.btn-primary {
+  background-color: rgb(42,31,85);
+}
+
+.btn-primary:hover {
+  background-color: rgba(42,31,85, 0.8);
+  border-color: rgb(255, 43, 68);
+}
