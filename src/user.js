@@ -17,6 +17,8 @@ class User {
 
   }
 
+
+
   static all(){
     return [...allUsers]
   }
@@ -38,6 +40,7 @@ class User {
     currentUser = allUsers.find(user => user.id === parseInt(this.id))
     let profilePic = document.getElementById('profile-pic')
     profilePic.src = currentUser.picture
+    return currentUser
   }
 
 
