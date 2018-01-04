@@ -45,7 +45,7 @@ class User {
 
   }
 
-  >>>>>>> 88ea8de81cfcef69f5e913d1639bd56f768a6dfe
+
 
   /// Instance Methods
 
@@ -93,7 +93,7 @@ class User {
     return currentUser
   }
 
-  
+
   createUserProfile() {
     console.log(this);
     let modalDiv = document.getElementById('userProfileModal')
