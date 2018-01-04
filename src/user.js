@@ -42,12 +42,10 @@ class User {
 
   static updateCurrentUser(){
     currentUser = allUsers.find(user => user.id === parseInt(this.id))
-    console.log("User: ", currentUser)
-    console.log(this)
-    console.log(event)
+
     let profilePic = document.getElementById('profile-pic')
     profilePic.src = currentUser.picture
-    return currentUser
+    console.log(currentUser)
   }
 
 
@@ -73,6 +71,11 @@ class User {
     //dropdown.innerHTML += /Some User Info/
     li.addEventListener('click', User.updateCurrentUser)
 
+
+  }
+
+  static currentUsername() {
+      return currentUser.username
 
   }
 

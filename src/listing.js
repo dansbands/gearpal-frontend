@@ -56,7 +56,7 @@ class Listing {
       <p class="card-text">Check out this cool guitar. It features a solid sitka spruce top...</p>
 
       <!-- Button trigger modal -->
-      <li type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal${item.id}">
+      <li type="button" onclick="changeValue(${item.id})" class="btn btn-primary" data-toggle="modal" data-target="#myModal${item.id}">
       More Info
       </li>
 
@@ -95,7 +95,7 @@ class Listing {
       <form id ="form${item.id}">
       <div class="form-group">
       <label for="exampleInputEmail1">Username</label>
-      <input type="text" class="form-control" id="exampleInputEmail1" value="${User.updateCurrentUser()}">
+      <input type="text" class="form-control" id="exampleInputEmail${item.id}">
       </div>
       <div class="form-group">
       <label for="exampleInputPassword1">Pickup Date</label>
@@ -183,4 +183,10 @@ class Listing {
     `
   }
 
+
+
+}
+function changeValue(id) {
+  let input = document.getElementById(`exampleInputEmail${id}`)
+  input.value = User.currentUsername()
 }
