@@ -24,7 +24,7 @@ class Reservation {
 
 
   static reserveFunc(event, itemId) {
-    console.log("hello")
+
     event.preventDefault()
     let username = event.target[0].value
     let pickupDate = event.target[1].value
@@ -32,7 +32,7 @@ class Reservation {
     let item = Listing.all().find(listing => itemId === listing.id)
     item.availability = false
     let reserverId = User.all().find(user => user.username === username).id
-    console.log(reserverId)
+
     let reservation = new Reservation({start_date: pickupDate, end_date: returnDate, reserver_id: reserverId})
     let borrowerId = User.all().find(user => user.username === username).id
 
@@ -48,7 +48,9 @@ class Reservation {
     headers: {"Content-Type": "application/json"},
     body: JSON.stringify(reserveData)})
     .then(res=> res.json())
-    .then(console.log)
+    .then(json => {
+      
+    })
 
 }
 }

@@ -17,6 +17,8 @@ class User {
 
   }
 
+
+
   static all(){
     return [...allUsers]
   }
@@ -30,6 +32,7 @@ class User {
 
   static currentUser(){
     currentUser = this.all()[0]
+
     console.log(currentUser)
     let profilePic = document.getElementById('profile-pic')
     profilePic.src = currentUser.picture
@@ -42,6 +45,7 @@ class User {
     console.log(event)
     let profilePic = document.getElementById('profile-pic')
     profilePic.src = currentUser.picture
+    return currentUser
   }
 
 
