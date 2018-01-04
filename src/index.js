@@ -2,8 +2,8 @@ document.addEventListener("DOMContentLoaded", initialFunction)
 
 function initialFunction() {
   Adapter.getUser()
-  Adapter.getListings()
-  Adapter.getReservations()
+  .then(Adapter.getListings)
+  .then(Adapter.getReservations)
 }
 
 
@@ -34,20 +34,37 @@ function getSearchValues() {
 
       //String Search breaks if you put in 'Shure 58'. Possibly split the string and check for inclusion of each
 
+      //ProfilePic doesn't load properly
+
   // NEW:
 
     // Search Form - DAN
-        // XX Search by partial match
-        // Keyup
+        // Search by imperfect match ('Shure 58')
 
-    // Renting Form - CORY
+    // Create New User Form
+
+    // User Profile Page
+        //Shows reservations
+
+
+    // Reservation Form - CORY
 
 
     // Create Listing Form
 
 
+    // User Select
+
+
+
+
+
+// DONE:
 
     // User Select
-        // Populate User Select Dropdown with user info
+        // XX Populate User Select Dropdown with user info
             // Adapter.getUser .then(data => User.createUsers(data))
-        //Store value of currently selected user for use in reservation form
+        // XX Store value of currently selected user for use in reservation form
+
+    // Search Form - DAN
+        // XX Search by partial match
