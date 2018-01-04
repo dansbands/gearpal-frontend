@@ -15,6 +15,7 @@ class Reservation {
   }
 
   static createReservations(json) {
+    debugger
     json.forEach(reservation => {
       let newReservation = new User(reservation)
 
@@ -23,6 +24,7 @@ class Reservation {
 
 
   static reserveFunc(event, itemId) {
+    console.log("hello")
     event.preventDefault()
     let username = event.target[0].value
     let pickupDate = event.target[1].value
@@ -30,9 +32,23 @@ class Reservation {
     let item = Listing.all().find(listing => itemId === listing.id)
     item.availability = false
     let reserverId = User.all().find(user => user.username === username).id
-
     console.log(reserverId)
     let reservation = new Reservation({start_date: pickupDate, end_date: returnDate, reserver_id: reserverId})
-    console.log(reservation)
-  }
+    let borrowerId = User.all().find(user => user.username === username).id
+
+    let reserveData = {
+      start_date: pickupDate,
+      end_date: returnDate,
+      name: "???",
+      reserver_type: "User",
+      reserver_id: borrowerId
+    }
+    fetch(`http://localhost:3000/reservations`,{
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify(reserveData)})
+    .then(res=> res.json())
+    .then(console.log)
+
+}
 }

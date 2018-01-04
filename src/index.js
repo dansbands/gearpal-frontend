@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", initialFunction)
 function initialFunction() {
   Adapter.getUser()
   .then(Adapter.getListings)
-  .then(Adapter.getReservations)
+  // .then(Adapter.getReservations)
 }
 
 
