@@ -25,7 +25,7 @@ formList.addEventListener("submit", () => listingFunc(event))
 
 function listingFunc(event) {
 
-  event.preventDefault()
+
 
   let username = event.target[0].value
   // console.log(username)
@@ -57,7 +57,7 @@ function listingFunc(event) {
   .then(res => res.json())
   .then((json) => {
     let listingImg = document.getElementById('listing-img')
-    listingImg.src = listing.picture
+    listingImg.src = json.picture
     // let listing = new Listing({id: json.id, title: itemName, picture: imageURL, price: price, condition: condition, location: location, lister_id: listerId})
     let listDiv = document.getElementById("listings")
     listDiv.innerHTML = ""
