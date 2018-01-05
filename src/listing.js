@@ -25,7 +25,9 @@ class Listing {
       let newListing = new Listing(el)
     })
     this.appendCards()
-  }
+  }  
+
+
 
   static appendCards(val) {
     let div = document.getElementById('listings')

@@ -3,8 +3,49 @@ document.addEventListener("DOMContentLoaded", initialFunction)
 function initialFunction() {
   Adapter.getUser()
   .then(Adapter.getListings)
-  // .then(Adapter.getReservations)
+  .then(Adapter.getReservations)
+
 }
+
+let formList = document.getElementById('listing-form-new')
+formList.addEventListener("submit", () => listingFunc(event))
+
+function listingFunc(event) {
+
+  event.preventDefault()
+
+  let username = event.target[0].value
+  console.log(username)
+  let itemName = event.target[1].value
+  let price = event.target[2].value
+  let location = event.target[3].value
+  let condition = event.target[4].value
+  let imageURL = event.target[5].value
+  let listerId = User.all().find(user => user.username === username).id
+
+  let listing = new Listing({title: itemName, picture: imageURL, price: price, condition: condition, location: location, lister_id: listerId})
+
+  console.log(listing)
+
+  let listData = {
+    title: itemName,
+    picture: imageURL,
+    price: price,
+    condition: condition,
+    location: location,
+    lister_type: "User",
+    lister_id: listerId,
+  }
+  fetch(`http://localhost:3000/listings`,{
+  method: "POST",
+  headers: {"Content-Type": "application/json"},
+  body: JSON.stringify(listData)})
+
+  }
+
+
+
+
 
 
 
@@ -18,6 +59,8 @@ function getSearchValues() {
   let locationValue = document.getElementById('location-search').value
   Listing.filterListing(searchValue, locationValue)
 }
+
+
 
 // function getLocationValue() {
 //   let locationValue = document.getElementById('location-search').value
