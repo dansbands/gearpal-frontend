@@ -204,7 +204,7 @@
     </div>
 
     <!-- Modal For User Profile-->
-    <!-- <div class="modal fade" id="userProfileModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"> -->
+    <div class="modal fade" id="userProfileModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div>
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -226,21 +226,24 @@
 
               </div>
             </div>
-            <div class="row" style="min-height: 150px; margin-top: 20px">
+            <div class="row" style="margin-top: 20px">
               <div class="container">
                 <div class="col-sm-3">
                   <h5>Borrower Rating: <span id="profileBorrowerRating"></span></h5>
                   <h5>Reservations:</h5>
                   <!-- <div id="profileReservations"></div> -->
-                  <div class="panel-group" id="profileReservations"></div>
+                  <div style="min-height: 150px; max-height: 300px; overflow: scroll;">
+                    <div class="panel-group" id="profileReservations"></div>
+                  </div>
 
                 </div>
                 <div class="col-sm-3">
                   <h5>Lister Rating: <span id="profileListerRating"></span></h5>
                   <h5>Listings:</h5>
                   <!-- <div id="profileListings"></div> -->
-
-                  <div class="panel-group" id="profileListings"></div>
+                  <div style="min-height: 150px; max-height: 300px; overflow: scroll;">
+                    <div class="panel-group" id="profileListings"></div>
+                  </div>
 
                 </div>
               </div>
@@ -252,7 +255,7 @@
           </div>
         </div>
       </div>
-    <!-- </div> -->
+    </div>
 
     <div id="modal-div"></div>
 

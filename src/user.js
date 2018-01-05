@@ -95,10 +95,8 @@ class User {
 
 
   createUserProfile() {
-    console.log(this);
     let modalDiv = document.getElementById('userProfileModal')
     // modalDiv.innerHTML = ''
-    console.log(modalDiv);
     let profilePicture = document.getElementById('profilePicture')
     profilePicture.src = this.picture
     let profileUsername = document.getElementById('profileUsername')
@@ -117,11 +115,11 @@ class User {
       <div class="panel panel-default">
       <div class="panel-heading">
       <h4 class="panel-title">
-      <a data-toggle="collapse" data-parent="#profileListings" href="#collapse${this.id}">
+      <a data-toggle="collapse" data-parent="#profileListings" href="#collapse${listing.id}">
       ${listing.title}</a>
       </h4>
       </div>
-      <div id="collapse${this.id}" class="panel-collapse collapse">
+      <div id="collapse${listing.id}" class="panel-collapse collapse">
       <div class="panel-body">
       <p>Availability: ${listing.availability}</p>
       <p>Condition: ${listing.condition}</p>
@@ -138,18 +136,17 @@ class User {
     let profileReservations = document.getElementById('profileReservations')
     profileReservations.innerHTML = ''
     this.reservations.forEach(reservation => {
-      console.log(reservation.start_date);
       let resName
       reservation.name ? resName = reservation.name : resName = "Reservation"
       profileReservations.innerHTML += `
       <div class="panel panel-default">
       <div class="panel-heading">
       <h4 class="panel-title">
-      <a data-toggle="collapse" data-parent="#profileListings" href="#collapse${this.id}">
+      <a data-toggle="collapse" data-parent="#profileReservations" href="#collapse-${reservation.id}">
       ${resName}</a>
       </h4>
       </div>
-      <div id="collapse${this.id}" class="panel-collapse collapse">
+      <div id="collapse-${reservation.id}" class="panel-collapse collapse">
       <div class="panel-body">
       <h5>Start Date:</h5>
       <p>${reservation.start_date}</p>
