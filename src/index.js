@@ -25,7 +25,7 @@ formList.addEventListener("submit", () => listingFunc(event))
 
 function listingFunc(event) {
 
-
+  event.preventDefault()
 
   let username = event.target[0].value
   // console.log(username)
