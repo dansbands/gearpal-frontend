@@ -41,6 +41,8 @@ class User {
     currentUser = allUsers.find(user => user.id === parseInt(this.id))
     let profilePic = document.getElementById('profile-pic')
     profilePic.src = currentUser.picture
+    let listingUsername = document.getElementById('ListerUsername')
+    listingUsername.value = User.currentUsername().username
     currentUser.createUserProfile()
 
   }

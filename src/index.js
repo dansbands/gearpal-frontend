@@ -4,8 +4,21 @@ function initialFunction() {
   Adapter.getUser()
   .then(Adapter.getListings)
   .then(Adapter.getReservations)
+  .then(list => {
+    let listingUsername = document.getElementById('ListerUsername')
 
+    listingUsername.value = User.currentUsername().username
+
+  })
 }
+
+// let listingUsername = document.getElementById('ListerUsername')
+// // console.log(listingUsername.value)
+// // console.log(User.currentUsername())
+// // debugger
+// listingUsername.value = User.currentUsername()
+
+
 
 let formList = document.getElementById('listing-form-new')
 formList.addEventListener("submit", () => listingFunc(event))
@@ -41,8 +54,7 @@ function listingFunc(event) {
   headers: {"Content-Type": "application/json"},
   body: JSON.stringify(listData)})
 
-  }
-
+}
 
 
 

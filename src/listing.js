@@ -25,9 +25,7 @@ class Listing {
       let newListing = new Listing(el)
     })
     this.appendCards()
-  }  
-
-
+  }
 
   static appendCards(val) {
     let div = document.getElementById('listings')
@@ -76,7 +74,7 @@ class Listing {
       <div class="modal-body">
       <div class="row">
       <div class="col-sm-6">
-      <img src="${item.picture}" alt="">
+      <img src="${item.picture}" style="max-width:200px;" >
       </div>
       <div class="col-sm-3">
       <p><b>Rate:</b></p>
