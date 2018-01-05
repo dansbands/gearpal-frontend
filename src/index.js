@@ -19,6 +19,34 @@ function getSearchValues() {
   Listing.filterListing(searchValue, locationValue)
 }
 
+
+function makeNewUser(){
+  let blankImg = document.getElementById("initialImage")
+  blankImg.src = "img/profile/placeholder.png"
+  let submit = document.getElementById("submitNewUser")
+  submit.addEventListener("submit", function(){
+    event.preventDefault()
+    let newUsername = event.target[0].value
+    let location = event.target[1].value
+    let profilePic = event.target[2].value
+    let userData ={username: newUsername, location: location, picture: profilePic}
+    fetch(`http://localhost:3000/users`,{
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(userData)})
+      .then(res=> res.json())
+      .then(json => {
+        let user = new User(json)
+        console.log(user)
+        blankImg.src = profilePic
+      
+      })
+
+    // let user = new User({username: newUsername, location: location, picture: profilePic})
+
+  })
+}
+
 // function getLocationValue() {
 //   let locationValue = document.getElementById('location-search').value
 //   console.log('Location Value:', locationValue)

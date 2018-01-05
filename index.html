@@ -63,7 +63,7 @@
 
                   <li id="separator" role="separator" class="divider"></li>
                   <!-- Button trigger modal New User -->
-                  <li style="margin-right: 10px; background-color: rgb(255, 43, 68); color: white; border-color: white" type="button" class="btn pull-right" data-toggle="modal" data-target="#newUserModal">
+                  <li style="margin-right: 10px; background-color: rgb(255, 43, 68); color: white; border-color: white" type="button" class="btn pull-right" data-toggle="modal" data-target="#newUserModal" onclick="makeNewUser()">
                     Create New User
                   </li>
                   <!-- <li style="background-color: rgb(255, 43, 68)"><a href="#">Create New User</a></li> -->
@@ -128,31 +128,26 @@
             <form>
               <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
               </div>
-              <div class="form-group">
+              <!-- <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
                 <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-              </div>
+              </div> -->
               <div class="form-group">
-                <label for="exampleInputFile">File input</label>
-                <input type="file" id="exampleInputFile">
+                <label for="exampleInputFile">File input</label><br>
+                <input type="text" id="exampleInputFiles">
                 <p class="help-block">Example block-level help text here.</p>
               </div>
               <div class="checkbox">
-                <label>
-                  <input type="checkbox"> Check me out
-                </label>
+
               </div>
               <button type="submit" class="btn btn-default">Submit</button>
             </form>
 
 
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
+
         </div>
       </div>
     </div>
@@ -166,39 +161,43 @@
             <h4 class="modal-title" id="myModalLabel">Create New User</h4>
           </div>
           <div class="modal-body">
-            <img src="img/profile/placeholder.png" alt="" style="width: 200px; height: 200px">
-            <form>
+            <img id="initialImage" src="img/profile/placeholder.png" alt="" style="width: 200px; height: 200px">
+            <form id="submitNewUser">
               <div class="form-group">
-                <label for="exampleInputEmail2">Enter Email Address</label>
-                <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email">
+                <label for="exampleInputEmail2">Enter Username</label>
+                <input type="text" class="form-control" id="createUsername" placeholder="username">
               </div>
+
               <div class="form-group">
+                <label for="exampleInputEmail2">Your Location</label>
+                <input type="text" class="form-control" id="createLocation" placeholder="borough">
+              </div>
+              <!-- <div class="form-group">
                 <label for="exampleInputPassword2">Enter Password</label>
                 <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
-              </div>
-              <div class="form-group">
+              </div> -->
+              <!-- <div class="form-group">
                 <label for="exampleConfirmPassword2">Confirm Password</label>
                 <input type="password" class="form-control" id="exampleConfirmPassword2" placeholder="Password">
-              </div>
+              </div> -->
               <div class="form-group">
-                <label for="exampleInputFile">Upload a Profile Picture</label>
-                <input type="file" id="exampleInputFile">
-                <p class="help-block">Example block-level help text here.</p>
+                <label for="exampleInputFile">Paste Image URL</label><br>
+                <input type="text" id="exampleInputFiles">
+
               </div>
               <div class="checkbox">
                 <label>
-                  <input type="checkbox"> Check me out
-                </label>
+
               </div>
-              <button type="submit" class="btn btn-default">Submit</button>
+              <button type="submit" style="background-color: rgba(52,31,116,0.5)" class="btn btn-default">Create User</button>
             </form>
 
 
           </div>
-          <div class="modal-footer">
+          <!-- <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>

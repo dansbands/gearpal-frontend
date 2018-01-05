@@ -49,17 +49,17 @@ class Reservation {
       listing_id: itemId
     }
     fetch(`http://localhost:3000/reservations`,{
-    method: "POST",
-    headers: {"Content-Type": "application/json"},
-    body: JSON.stringify(reserveData)})
-    .then(res=> res.json())
-    .then(json => {
-      let now = new Date();
-      let currentUser = User.currentUsername()
-      console.log(currentUser)
-      let reserveDiv = undefined
-      for (let i = 0; i< currentUser.reservations.length; i++) {
-        let reservation = currentUser.reservations[i]
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(reserveData)})
+      .then(res=> res.json())
+      .then(json => {
+        let now = new Date();
+        let currentUser = User.currentUsername()
+        console.log(currentUser)
+        let reserveDiv = undefined
+        for (let i = 0; i < currentUser.reservations.length; i++) {
+          let reservation = currentUser.reservations[i]
 
           let reserveDiv = document.getElementById(`form${itemId}`)
           reserveDiv.innerHTML = ""
@@ -67,13 +67,7 @@ class Reservation {
           reserveDiv.innerHTML += "<br><p id='userFeed'>You have reserved this item</p>"
           break
 
-      }
-
-
-
-
-
-    })
-
-}
-}
+        }
+      })
+    }
+  }
