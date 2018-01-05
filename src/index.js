@@ -28,7 +28,8 @@ function listingFunc(event) {
   event.preventDefault()
 
   let username = event.target[0].value
-  console.log(username)
+  // console.log(username)
+
   let itemName = event.target[1].value
   let price = event.target[2].value
   let location = event.target[3].value
@@ -36,9 +37,9 @@ function listingFunc(event) {
   let imageURL = event.target[5].value
   let listerId = User.all().find(user => user.username === username).id
 
-  let listing = new Listing({title: itemName, picture: imageURL, price: price, condition: condition, location: location, lister_id: listerId})
 
-  console.log(listing)
+
+  // console.log(listing)
 
   let listData = {
     title: itemName,
@@ -53,16 +54,17 @@ function listingFunc(event) {
   method: "POST",
   headers: {"Content-Type": "application/json"},
   body: JSON.stringify(listData)})
-  .then(res=> res.json())
-  .then(json => {
-    let listing = new Listing(json)
-    console.log(listing)
+  .then(res => res.json())
+  .then((json) => {
     let listingImg = document.getElementById('listing-img')
     listingImg.src = listing.picture
-
+    // let listing = new Listing({id: json.id, title: itemName, picture: imageURL, price: price, condition: condition, location: location, lister_id: listerId})
+    let listDiv = document.getElementById("listings")
+    listDiv.innerHTML = ""
+    allListings = []
+    Adapter.getListings()
   })
-
-}
+  }
 
 
 
@@ -97,11 +99,16 @@ function makeNewUser(){
       body: JSON.stringify(userData)})
       .then(res=> res.json())
       .then(json => {
-        let user = new User(json)
-        console.log(user)
+        // let user = new User(json)
+        User.createUsers([json])
+        // console.log(user)
         blankImg.src = profilePic
 
-      })
+      }
+      // let userDiv = document.getElementById("user-select")
+      // userDiv.innerHTML = ""
+      // User.createUsers(json)
+    )
 
     // let user = new User({username: newUsername, location: location, picture: profilePic})
 
