@@ -16,7 +16,6 @@ class Reservation {
   }
 
   static createReservations(json) {
-    debugger
     json.forEach(reservation => {
       let newReservation = new User(reservation)
 
