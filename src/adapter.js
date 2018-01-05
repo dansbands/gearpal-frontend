@@ -13,7 +13,7 @@ class Adapter {
     .then(json => Listing.createListings(json))
   }
 
-  static getReservations(userId) {
+  static getReservations() {
 
     return fetch('http://localhost:3000/reservations')
     .then(res => res.json())

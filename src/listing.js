@@ -47,16 +47,16 @@ class Listing {
 
       // console.log(newDiv)
       newDiv.innerHTML = `
-      <div class="card col-xs-3" style="margin-bottom: 20px">
+      <div class="card col-xs-3" style="margin-bottom: 20px; padding-right: 50px">
       <img class="card-img-top" src="${item.picture}" style="height:150px" alt="Card image cap">
       <div class="card-block">
-      <h4 class="card-title">${item.title}</h4>
-      <h5 class="card-title">$${item.price}.00</h5>
+      <h4 id="itemTitle${item.id}" class="card-title">${item.title}</h4>
+      <h5 class="card-title">$${item.price}.00/day</h5>
 
-      <p class="card-text">Check out this cool guitar. It features a solid sitka spruce top...</p>
+      <p class="card-text">Check out this great piece of gear. You can have it for a low daily rate...</p>
 
       <!-- Button trigger modal -->
-      <li type="button" onclick="changeValue(${item.id})" class="btn btn-primary" data-toggle="modal" data-target="#myModal${item.id}" onclick="changeValue(${item.id})">
+      <li type="button" onclick="Listing.changeValue(${item.id})" class="btn btn-primary" data-toggle="modal" data-target="#myModal${item.id}" onclick="changeValue(${item.id})">
       More Info
       </li>
 
@@ -176,18 +176,17 @@ class Listing {
     <h4 class="card-title">${this.title}</h4>
     <h5 class="card-title">$${this.price}.00</h5>
 
-    <p class="card-text">Check out this cool guitar. It features a solid sitka spruce top...</p>
+
     <a href="#" class="btn btn-primary">More Info</a>
     </div>
     </div>
     `
   }
 
+  static changeValue(id) {
+    let input = document.getElementById(`exampleInputEmail-${id}`)
+    console.log(input);
+    input.value = User.currentUsername().username
+  }
 
-
-}
-function changeValue(id) {
-  let input = document.getElementById(`exampleInputEmail-${id}`)
-  console.log(input);
-  input.value = User.currentUsername()
 }

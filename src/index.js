@@ -34,27 +34,22 @@ function getSearchValues() {
 
       //String Search breaks if you put in 'Shure 58'. Possibly split the string and check for inclusion of each
 
+      // New reservation doesn't append to user profile until page refresh
+
+      // Date in reservation displays in an ugly format
+
+
+
 
   // NEW:
-
-
 
     // Create Listing Form - ERICK
       // Write JS
 
-    // User Profile Page
-      //Build this
-      //Shows reservations
-
+      //CORY
     // Create New User Form
-      //Build this
-
-
-
-    // Reservation Form - CORY
-        // Generate user feedback - successfully created
-        // Push reservations to a profile page (to be created)
-
+      // XX Build this
+      // Add JS
 
     // Search Form - DAN
         // Search by imperfect match ('Shure 58')
@@ -62,12 +57,14 @@ function getSearchValues() {
 
     // User Select - Erick
         // Done
-
+        // XX Add view profile
 
 
 
 
 // DONE:
+// Reservation Form - CORY
+  // XXGenerate user feedback - successfully created
 
     // User Select
         // XX Populate User Select Dropdown with user info
@@ -78,3 +75,9 @@ function getSearchValues() {
         // XX Search by partial match
 
     // XX ProfilePic doesn't load properly
+
+    // User Profile Page - DAN
+      // XX Build this
+      // XX Write JS
+      // XX Shows reservations
+      // XX Shows listings
