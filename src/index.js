@@ -53,6 +53,14 @@ function listingFunc(event) {
   method: "POST",
   headers: {"Content-Type": "application/json"},
   body: JSON.stringify(listData)})
+  .then(res=> res.json())
+  .then(json => {
+    let listing = new Listing(json)
+    console.log(listing)
+    let listingImg = document.getElementById('listing-img')
+    listingImg.src = listing.picture
+
+  })
 
 }
 
